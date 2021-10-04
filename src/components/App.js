@@ -4,6 +4,7 @@ import TybeBar from './TypeBar';
 import ToDoList from './ToDoList';
 import SortList from './SortList';
 
+// TODO: Przenieść cały state to Redux
 class App extends React.Component {
   state = {
     toDoItems: [],
@@ -22,7 +23,7 @@ class App extends React.Component {
   onCheckboxCheck = (e) => this.setState({ splitDesc: e });
 
   onItemCheckboxCheck = (e1, e2, bool) => {
-    let tempArr = [...kthis.state.toDoItems];
+    let tempArr = [...this.state.toDoItems];
     const index1 = tempArr.indexOf(e1);
     const index2 = tempArr[index1].desc.indexOf(e2);
     tempArr[index1].desc[index2].isMade = bool;
